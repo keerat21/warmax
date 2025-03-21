@@ -1,0 +1,73 @@
+@use "./breakpoints" as *;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin negate-body-padding {
+  margin-right: calc(-1rem); // Adjusted to counter body padding
+  margin-left: calc(-1rem);
+
+  @include tablet-breakpoint {
+    margin-right: calc(-2.25rem); // Matches body padding on larger screens
+    margin-left: calc(-2.25rem);
+  }
+}
+@mixin manage-avatar-image {
+  @include tablet-breakpoint {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+}
+
+//font mixins
+
+@mixin normal-text-black {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+
+  @include tablet-breakpoint {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+
+  @include desktop-breakpoint {
+    padding-right: 1rem;
+  }
+}
+
+@mixin demi-subtitle-black {
+  font-family: "Avenir Next", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  @include tablet-breakpoint {
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+  }
+}
+
+@mixin bold-main-title {
+  padding-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  @include tablet-breakpoint {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+    padding-bottom: 0;
+  }
+
+  line-height: 2rem;
+}
